@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
-import Home from "./components/home.component";
+
+import HomePage from "./homepage.component";
 
 function App() {
-  let [name, setName] = useState();
-  name = "Muneeb";
-
-  return <Home title="HomeAja" myName={name} />;
+  return (
+    <div>
+      <HomePage />
+    </div>
+  );
 }
 
 export default App;
