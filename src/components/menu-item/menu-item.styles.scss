@@ -22,6 +22,7 @@
   }
 
   &:hover {
+    cursor: pointer;
     .background-image {
       transform: scale(1.2);
       transition: 6s;
