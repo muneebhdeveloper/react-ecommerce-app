@@ -12,11 +12,13 @@ class Shop extends Component {
   }
   render() {
     const { collections } = this.state;
-    return <div className="">{
-        collections.map({id ...otherShopProps} => (
-            <CollectionPreview key={id} {...otherShopProps} />
-        ))
-    }</div>;
+    return (
+      <div className="">
+        {collections.map(({ id, ...otherShopProps }) => (
+          <CollectionPreview key={id} {...otherShopProps} />
+        ))}
+      </div>
+    );
   }
 }
 
