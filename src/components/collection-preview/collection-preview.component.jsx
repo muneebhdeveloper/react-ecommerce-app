@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./collection-preview.styles.scss";
 
 import CollectionItem from "../../components/collection-item/collection-item.component";
