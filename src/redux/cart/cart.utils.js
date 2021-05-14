@@ -11,3 +11,15 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
 
   return [...cartItems, { ...cartItemToAdd, quantity: 1 }];
 };
+
+export const removeDecreaseItem = (cartItems, itemToDecreaseRemove) => {
+  if (itemToDecreaseRemove.quantity === 1) {
+    return cartItems.filter((item) => item.id !== itemToDecreaseRemove.id);
+  }
+
+  return cartItems.map((item) =>
+    item.id === itemToDecreaseRemove.id
+      ? { ...item, quantity: itemToDecreaseRemove.quantity - 1 }
+      : item
+  );
+};
