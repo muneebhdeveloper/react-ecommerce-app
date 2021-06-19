@@ -9,7 +9,12 @@ import Header from "./components/header/header.component";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selectors";
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+// import { selectCollectionsForPreview } from "./redux/shop/shop.selectors";
+import {
+  auth,
+  createUserProfileDocument,
+  // addCollectionAndDocuments,
+} from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.action";
 
 class App extends Component {
@@ -33,6 +38,11 @@ class App extends Component {
         setCurrentUser(userAuth);
       }
     });
+
+    // addCollectionAndDocuments(
+    //   "collections",
+    //   collectionsArray.map(({ title, items }) => ({ title, items }))
+    // );
   }
 
   componentWillUnmount() {
@@ -62,6 +72,7 @@ class App extends Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
+  // collectionsArray: selectCollectionsForPreview,
 });
 
 const mapDispatchToProps = (dispatch) => ({
